@@ -1,13 +1,12 @@
-import './App.css'
-import Name from './components/name'
+import "./App.css";
+import Name from "./components/name";
 
 function App() {
-
   return (
     <>
-      <Name title={"CEO"}/>
+      <Name title={"CEO"} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

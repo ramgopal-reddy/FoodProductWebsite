@@ -1,4 +1,4 @@
-function Name({title}) {
+function Name({ title }) {
   return (
     <div className="name">
       <h1>John Doe {title}</h1>
