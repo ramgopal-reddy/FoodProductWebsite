@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <Name/>
+      <Name title={"CEO"}/>
     </>
   )
 }

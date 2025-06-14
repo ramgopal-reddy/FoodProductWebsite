@@ -1,7 +1,7 @@
-function Name() {
+function Name({title}) {
   return (
     <div className="name">
-      <h1>John Doe</h1>
+      <h1>John Doe {title}</h1>
       <h2>Web Developer</h2>
       <h3>CSS and HTML</h3>
     </div>
