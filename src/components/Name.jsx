@@ -1,4 +1,17 @@
+import { useEffect, useState } from "react";
+
 function Name({ title }) {
+
+  const productName = () => {
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+      fetch("https://dummyjson.com/products")
+        .then((response) => response.json())
+        .then((data) => setData(data.products));
+    }, []);
+  }
+
   return (
     <div className="name">
       <h1>John Doe {title}</h1>
