@@ -17,26 +17,60 @@ const ProductDetail = () => {
   if (loading) return <Spinner5 />;
   if (!product) return <p className="p-4 text-red-500">Product not found.</p>;
 
+  const nutrients = product.nutriments || {};
+  const labels = product.labels_tags || [];
+
   return (
-    <div className="max-w-2xl mx-auto p-6">
+    <div className="max-w-3xl mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4">{product.product_name}</h1>
+
       {product.image_url && (
         <img
           src={product.image_url}
           alt={product.product_name}
-          className="w-48 h-48 object-contain mb-4"
+          className="w-60 h-60 object-contain mb-6 mx-auto"
         />
       )}
-      <p>
-        <strong>Generic Name:</strong> {product.generic_name || "N/A"}
-      </p>
-      <p>
-        <strong>Nutri Grade:</strong>{" "}
-        {product.nutrition_grade_fr?.toUpperCase() || "N/A"}
-      </p>
-      <p>
-        <strong>Ingredients:</strong> {product.ingredients_text || "N/A"}
-      </p>
+
+      <div className="space-y-2">
+        <p>
+          <strong>Generic Name:</strong> {product.generic_name || "N/A"}
+        </p>
+
+        <p>
+          <strong>Ingredients:</strong> {product.ingredients_text || "N/A"}
+        </p>
+
+        <p>
+          <strong>Nutri Grade:</strong>{" "}
+          {product.nutrition_grade_fr?.toUpperCase() || "N/A"}
+        </p>
+
+        <div>
+          <strong>Nutritional Values (per 100g):</strong>
+          <ul className="list-disc list-inside ml-4 mt-1 text-sm text-gray-700">
+            <li>Energy: {nutrients.energy_100g || "N/A"} kJ</li>
+            <li>Fat: {nutrients.fat_100g || "N/A"} g</li>
+            <li>Saturated Fat: {nutrients["saturated-fat_100g"] || "N/A"} g</li>
+            <li>Carbohydrates: {nutrients.carbohydrates_100g || "N/A"} g</li>
+            <li>Sugars: {nutrients.sugars_100g || "N/A"} g</li>
+            <li>Proteins: {nutrients.proteins_100g || "N/A"} g</li>
+            <li>Salt: {nutrients.salt_100g || "N/A"} g</li>
+            <li>Fiber: {nutrients.fiber_100g || "N/A"} g</li>
+          </ul>
+        </div>
+
+        {labels.length > 0 && (
+          <div>
+            <strong>Labels:</strong>
+            <ul className="list-disc list-inside ml-4 mt-1 text-sm text-green-700">
+              {labels.map((label, idx) => (
+                <li key={idx}>{label.replace(/_/g, " ")}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

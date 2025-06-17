@@ -5,12 +5,19 @@ import ProductDetail from "./components/ProductDetail"; // Create this if not ye
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Products />} />
-        <Route path="/product/:code" element={<ProductDetail />} />
-      </Routes>
-    </Router>
+    <div className="bg-black">
+      <header className="text-white p-4 text-center">
+        <h1 className="text-2xl font-bold">Food Products App</h1>
+        <p className="text-sm">Explore and search for food products</p>
+      </header>
+
+      <Router>
+        <Routes>
+          <Route path="/" element={<Products />} />
+          <Route path="/product/:code" element={<ProductDetail />} />
+        </Routes>
+      </Router>
+    </div>
   );
 }
 
