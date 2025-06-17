@@ -3,8 +3,6 @@
 
 A modern React web application to search and explore food products using the [OpenFoodFacts API](https://world.openfoodfacts.org/). Users can search by product name, category, or barcode, and view detailed nutritional and ingredient information.
 
----
-
 ## 🚀 Features
 
 - 🔍 **Product Search** by name, category, or barcode
