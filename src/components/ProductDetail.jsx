@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Spinner5 from "./Loading";
 
 const ProductDetail = () => {
   const { code } = useParams();
@@ -13,7 +14,7 @@ const ProductDetail = () => {
       .finally(() => setLoading(false));
   }, [code]);
 
-  if (loading) return <p className="p-4">Loading...</p>;
+  if (loading) return <Spinner5 />;
   if (!product) return <p className="p-4 text-red-500">Product not found.</p>;
 
   return (
