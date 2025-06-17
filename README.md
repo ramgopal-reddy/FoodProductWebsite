@@ -46,16 +46,16 @@ A modern React web application to search and explore food products using the [Op
 ## 📁 File Structure (Simplified)
 ```
 
-src/
-│
-├── components/
-│ ├── Products.jsx # Main search & listing page
-│ ├── ProductDetail.jsx # Detailed view of a single product
-│ └── Loading.jsx # Spinner component
-│
-├── fetchProducts.js # Fetch helper for API calls
-├── App.js # Routes configuration
-└── index.js
+- src/
+- │
+- ├── components/
+- │ ├── Products.jsx # Main search & listing page
+- │ ├── ProductDetail.jsx # Detailed view of a single product
+- │ └── Loading.jsx # Spinner component
+- │
+- ├── fetchProducts.js # Fetch helper for API calls
+- ├── App.js # Routes configuration
+- └── index.js
 
 ````
 
