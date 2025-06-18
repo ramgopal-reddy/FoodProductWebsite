@@ -60,6 +60,10 @@ _(Replace with actual URL)_
  └── ...
 ```
 
+## Structure Image
+
+![Structure  Image](./screenshots/structure.png)
+
 ---
 
 ## 🔧 Installation
