@@ -26,7 +26,7 @@
 
 ## 🥪 Live Demo
 
-Check out the live demo here: [foodproductswebsite.ramgopalreddy.xyz](foodproductswebsite.ramgopalreddy.xyz)
+Check out the live demo here: [https://foodproductswebsite.ramgopalreddy.xyz](https://foodproductswebsite.ramgopalreddy.xyz)
 
 ---
 
