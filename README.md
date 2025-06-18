@@ -67,8 +67,8 @@ _(Replace with actual URL)_
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/your-username/food-product-explorer.git
-cd food-product-explorer
+git clone https://github.com/ramgopal-reddy/FoodProductWebsite.git
+cd FoodProductWebsite
 ```
 
 2. **Install dependencies:**
@@ -126,8 +126,6 @@ These are used via Tailwind utility classes for quick and responsive styling.
 | ----------------------------------- | -------------------------------------------- |
 | ![home](./screenshots/homepage.png) | ![details](./screenshots/product-detail.png) |
 
-> _(Make sure to include `/screenshots` folder in your repo)_
-
 ---
 
 ## ✨ Contributing
@@ -136,16 +134,16 @@ Contributions are welcome! Please fork the repository and submit a pull request 
 
 ```bash
 # Fork & Clone
-git clone https://github.com/your-username/food-product-explorer.git
+git clone https://github.com/ramgopal-reddy/FoodProductWebsite.git
 
 # Create new branch
-git checkout -b feature/your-feature-name
+git checkout -b feature/RamGopalReddy
 
 # Make changes and commit
 git commit -m "Add your feature"
 
 # Push and PR
-git push origin feature/your-feature-name
+git push origin feature/RamGopalReddy
 ```
 
 ---
@@ -160,14 +158,14 @@ See the [LICENSE](LICENSE) file for more details.
 ## 👨‍💼 Author
 
 - **Your Name**
-- GitHub: [@your-username](https://github.com/ramgopal-reddy)
-- Email: [your.email@example.com](mailto:redabothularamgopalreddy@gmail.com)
+- GitHub: [https://github.com/ramgopal-reddy](https://github.com/ramgopal-reddy)
+- Email: [redabothularamgopalreddy@gmail.com](mailto:redabothularamgopalreddy@gmail.com)
 
 ---
 
 ## 📬 Feedback
 
-If you have any feedback or suggestions, feel free to [open an issue](https://github.com/ramgopal-reddy/food-product-explorer/issues) or send an email.
+If you have any feedback or suggestions, feel free to [open an issue](https://github.com/ramgopal-reddy/FoodProductWebsite/issues) or send an email.
 
 ---
 
