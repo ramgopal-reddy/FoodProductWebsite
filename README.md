@@ -26,8 +26,7 @@
 
 ## 🥪 Live Demo
 
-Check out the live demo here: [https://your-demo-link.com](https://your-demo-link.com)
-_(Replace with actual URL)_
+Check out the live demo here: [foodproductswebsite.ramgopalreddy.xyz](foodproductswebsite.ramgopalreddy.xyz)
 
 ---
 
