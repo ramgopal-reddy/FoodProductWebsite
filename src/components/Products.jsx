@@ -84,6 +84,26 @@ const Products = () => {
             <option value="breakfasts">Breakfasts</option>
             <option value="cereals">Cereals</option>
             <option value="pizzas">Pizzas</option>
+            <option value="biscuits-and-cakes">Biscuits & Cakes</option>
+            <option value="desserts">Desserts</option>
+            <option value="sweets">Sweets</option>
+            <option value="juices">Juices</option>
+            <option value="soft-drinks">Soft Drinks</option>
+            <option value="meats">Meats</option>
+            <option value="frozen-foods">Frozen Foods</option>
+            <option value="cheeses">Cheeses</option>
+            <option value="bread">Bread</option>
+            <option value="sauces">Sauces</option>
+            <option value="soups">Soups</option>
+            <option value="jams">Jams</option>
+            <option value="dairies">Dairies</option>
+            <option value="plant-based-foods">Plant-based Foods</option>
+            <option value="vegetables">Vegetables</option>
+            <option value="fruits">Fruits</option>
+            <option value="seafood">Seafood</option>
+            <option value="baby-foods">Baby Foods</option>
+            <option value="energy-bars">Energy Bars</option>
+            <option value="ready-meals">Ready Meals</option>
           </select>
 
           <select
