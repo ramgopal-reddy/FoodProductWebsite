@@ -16,7 +16,7 @@ export default function Header() {
             Products
           </a>
           <a
-            href="/about"
+            href="/"
             className="hover:text-[#34A853] cursor-pointer transition"
           >
             About
