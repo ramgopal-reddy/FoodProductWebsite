@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchProductsBySearch } from "../fetchProducts";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import PageTitle from "./PageTitle";
 
 import Spinner5 from "./Loading";
 
@@ -51,23 +52,33 @@ const Products = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="p-6 max-w-7xl bg-black mx-auto">
+    <div className="p-6 max-w-7xl bg-[#FAFAFA] mx-auto min-h-screen">
+      <PageTitle
+        title="Explore Food Products"
+        subtitle="Search, filter, and compare food products from OpenFoodFacts"
+      />
+
       {/* Filters */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
+      <div className="text-[#333333] flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-6">
+        {/* Name Search */}
         <input
           type="text"
           placeholder="Search by name..."
           value={search}
           onChange={handleSearchChange}
-          className="border border-black-300 bg-black p-2 rounded w-full sm:max-w-xs focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="border border-[#E0E0E0] text-[#333333] bg-white p-3 rounded w-full lg:max-w-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-[#34A853]"
         />
 
-        <div className="flex flex-wrap gap-3">
+        {/* Filter Selects */}
+        <div className="flex flex-col sm:flex-row flex-wrap gap-3 w-full lg:w-auto">
           <select
             value={category}
             onChange={handleCategoryChange}
-            className="border border-black-300 bg-black p-2 rounded focus:outline-none"
+            className="border border-[#E0E0E0] bg-white text-[#333333] p-3 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-[#34A853]"
           >
+            <option disabled value="">
+              Select Category
+            </option>
             <option value="snacks">Snacks</option>
             <option value="beverages">Beverages</option>
             <option value="breakfasts">Breakfasts</option>
@@ -78,7 +89,7 @@ const Products = () => {
           <select
             value={sortBy}
             onChange={handleSortChange}
-            className="border border-black-300 bg-black p-2 rounded focus:outline-none"
+            className="border border-[#E0E0E0] bg-white text-[#333333] p-3 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-[#34A853]"
           >
             <option value="product_name">Sort by Name</option>
             <option value="nutrition_grade_fr">Sort by Nutri Grade</option>
@@ -87,27 +98,27 @@ const Products = () => {
           <select
             value={sortOrder}
             onChange={(e) => setSortOrder(e.target.value)}
-            className="border border-black-300 bg-black p-2 rounded focus:outline-none"
+            className="border border-[#E0E0E0] bg-white text-[#333333] p-3 rounded shadow-sm focus:outline-none focus:ring-2 focus:ring-[#34A853]"
           >
-            <option value="asc">A--Z</option>
-            <option value="desc">Z--A</option>
+            <option value="asc">A–Z</option>
+            <option value="desc">Z–A</option>
           </select>
         </div>
 
         {/* Barcode Search */}
-        <div className="flex items-center gap-2 mb-4">
+        <div className="flex w-full sm:w-auto items-center gap-3">
           <input
             type="text"
             placeholder="Enter Barcode"
             value={barcode}
             onChange={(e) => setBarcode(e.target.value)}
-            className="border border-black-300 p-2 rounded focus:outline-none w-full sm:max-w-xs"
+            className="border border-[#E0E0E0] p-3 rounded w-full shadow-sm focus:outline-none focus:ring-2 focus:ring-[#34A853]"
           />
           <button
             onClick={() => {
               if (barcode.trim()) navigate(`/product/${barcode.trim()}`);
             }}
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+            className="bg-[#34A853] hover:bg-[#0B6623] text-white px-4 py-2 rounded transition shadow-md"
           >
             Search
           </button>
@@ -118,45 +129,49 @@ const Products = () => {
       {loading ? (
         <Spinner5 />
       ) : sortedProducts.length === 0 ? (
-        <p className="text-red-500 text-center">No products found.</p>
+        <p className="text-red-500 text-center mt-12 text-lg">
+          No products found.
+        </p>
       ) : (
         <>
-          <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+          {/* Product Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {visibleProducts.map((product, idx) => (
               <div
                 key={idx}
-                className="border border-black-200 p-4 rounded-lg shadow-sm hover:shadow-md transition duration-200"
+                className="bg-white border border-[#E0E0E0] p-4 rounded-lg shadow hover:shadow-lg transition duration-200"
               >
                 <Link to={`/product/${product.code}`}>
-                  <h2 className="text-lg font-semibold text-white-800">
+                  <img
+                    src={
+                      product.image_small_url ||
+                      "https://via.placeholder.com/100"
+                    }
+                    alt={product.product_name}
+                    className="w-28 h-28 object-contain mx-auto mb-4"
+                  />
+
+                  <h2 className="text-lg font-semibold text-[#0B6623] mb-1 text-center">
                     {product.product_name || "Unnamed"}
                   </h2>
 
-                  <p className="text-sm text-gray-700">
+                  <p className="text-sm text-gray-600 text-center">
                     <strong>Category:</strong> {category}
                   </p>
 
-                  <p className="text-sm text-gray-700">
+                  <p className="text-sm text-gray-600 mt-1">
                     <strong>Ingredients:</strong>{" "}
                     {product.ingredients_text
                       ? `${product.ingredients_text.slice(0, 50)}...`
                       : "N/A"}
                   </p>
 
-                  <p className="mt-1 text-sm text-blue-600">
+                  <p className="text-sm text-[#34A853] mt-2 text-center">
                     <strong>Nutri Grade:</strong>{" "}
                     {product.nutrition_grade_fr
                       ? product.nutrition_grade_fr.toUpperCase()
                       : "N/A"}
                   </p>
-
-                  {product.image_small_url && (
-                    <img
-                      src={product.image_small_url}
-                      alt={product.product_name}
-                      className="mt-3 w-24 h-24 object-contain mx-auto"
-                    />
-                  )}
                 </Link>
               </div>
             ))}
@@ -164,10 +179,10 @@ const Products = () => {
 
           {/* Load More */}
           {visibleCount < sortedProducts.length && (
-            <div className="flex justify-center mt-6">
+            <div className="flex justify-center mt-8">
               <button
                 onClick={handleLoadMore}
-                className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+                className="px-6 py-3 bg-[#34A853] text-white font-medium rounded hover:bg-[#0B6623] transition shadow-lg"
               >
                 Load More
               </button>

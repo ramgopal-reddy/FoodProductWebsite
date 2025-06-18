@@ -4,18 +4,18 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-#root {
-  background-color: black;
-  color: white;
+/* #root {
+  background-color: #fafafa;
+  color: #333333;
   font-family: 'Inter', sans-serif;
-}
+} */
 
-.productDetails{
+/* .productDetails{
   display: grid;
   /* grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 3fr; */
-  gap: 20px;
-  background-color: #1a1a1a;
+  /* gap: 20px;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding-left: 30px;
@@ -25,7 +25,7 @@
 #product-image {
   display: block;
   margin: auto 0; /* Horizontal centering */
-  width: 100%;
+  /* width: 100%;
   height: auto;
   border-radius: 10px;
   grid-column-start: 2;
@@ -34,8 +34,8 @@
   margin-right: 100px;
   border-width: 10px;
   border-style: solid;
-  border-color: #ffffff; /* Dark border for contrast */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-color: #e0e0e0; /* Dark border for contrast */
+  /* box-shadow: #e0e0e0;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -46,25 +46,25 @@
   flex-direction: column;
   font-size: 2vh;
 }
-
+ */ */
 
 /* Small devices (phones, <640px) */
-@media (max-width: 639px) {
+/* @media (max-width: 639px) {
   #product-image {
     margin: 10px auto;
   }
-}
+} */
 
 /* Medium devices (tablets, ≥640px and <1024px) */
-@media (min-width: 640px) and (max-width: 1023px) {
+/* @media (min-width: 640px) and (max-width: 1023px) {
   #product-image {
     margin: 20px auto;
   }
-}
+} */
 
 /* Large devices (desktops, ≥1024px) */
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   #product-image {
     margin: 30px auto;
   }
-}
+} */ */ */
