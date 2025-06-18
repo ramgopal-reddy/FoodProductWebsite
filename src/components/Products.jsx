@@ -128,7 +128,7 @@ const Products = () => {
                 className="border border-black-200 p-4 rounded-lg shadow-sm hover:shadow-md transition duration-200"
               >
                 <Link to={`/product/${product.code}`}>
-                  <h2 className="text-lg font-semibold text-black-800">
+                  <h2 className="text-lg font-semibold text-white-800">
                     {product.product_name || "Unnamed"}
                   </h2>
 

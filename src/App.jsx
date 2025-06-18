@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Products from "./components/Products";
 import ProductDetail from "./components/ProductDetail"; // Create this if not yet done
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

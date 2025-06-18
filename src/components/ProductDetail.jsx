@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Spinner5 from "./Loading";
+// import Spinner5 from "./Loading";
+import CardExample from "./PlaceHolder";
+import "../App.css";
 
 const ProductDetail = () => {
   const { code } = useParams();
@@ -14,14 +16,14 @@ const ProductDetail = () => {
       .finally(() => setLoading(false));
   }, [code]);
 
-  if (loading) return <Spinner5 />;
+  if (loading) return <CardExample />;
   if (!product) return <p className="p-4 text-red-500">Product not found.</p>;
 
   const nutrients = product.nutriments || {};
   const labels = product.labels_tags || [];
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div className="productDetails">
       <h1 className="text-2xl font-bold mb-4">{product.product_name}</h1>
 
       {product.image_url && (
@@ -29,17 +31,33 @@ const ProductDetail = () => {
           src={product.image_url}
           alt={product.product_name}
           className="w-60 h-60 object-contain mb-6 mx-auto"
+          id="product-image"
         />
       )}
 
-      <div className="space-y-2">
+      <div className="space-y-2" id="product-info">
         <p>
           <strong>Generic Name:</strong> {product.generic_name || "N/A"}
         </p>
 
-        <p>
-          <strong>Ingredients:</strong> {product.ingredients_text || "N/A"}
-        </p>
+        <strong>Ingredients:</strong>
+        <ul className="list-disc list-inside ml-4 mt-1 text-sm text-white-700">
+          {product.ingredients_text ? (
+            product.ingredients_text.split(",").map((item, idx) => (
+              <li
+                key={idx}
+                dangerouslySetInnerHTML={{
+                  __html: item.replace(
+                    /_([^_]+)_/g,
+                    '<span class="allergen">$1</span>'
+                  ),
+                }}
+              />
+            ))
+          ) : (
+            <li>N/A</li>
+          )}
+        </ul>
 
         <p>
           <strong>Nutri Grade:</strong>{" "}
@@ -48,7 +66,10 @@ const ProductDetail = () => {
 
         <div>
           <strong>Nutritional Values (per 100g):</strong>
-          <ul className="list-disc list-inside ml-4 mt-1 text-sm text-gray-700">
+          <ul
+            className="list-disc list-inside ml-4 mt-1 text-sm text-white-700"
+            id="product-info"
+          >
             <li>Energy: {nutrients.energy_100g || "N/A"} kJ</li>
             <li>Fat: {nutrients.fat_100g || "N/A"} g</li>
             <li>Saturated Fat: {nutrients["saturated-fat_100g"] || "N/A"} g</li>
@@ -65,7 +86,7 @@ const ProductDetail = () => {
             <strong>Labels:</strong>
             <ul className="list-disc list-inside ml-4 mt-1 text-sm text-green-700">
               {labels.map((label, idx) => (
-                <li key={idx}>{label.replace(/_/g, " ")}</li>
+                <li key={idx}>{label.replace(/en:/g, " ")}</li>
               ))}
             </ul>
           </div>
